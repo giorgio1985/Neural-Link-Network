@@ -3,8 +3,7 @@ class HelloWorld:
         self.hello = hello
 
     def print_hello(self):
-        print('heeeeeeeeellooooooo')
+        print('Hello..', self.hello)
 
-seyHello = HelloWorld(1)
-seyHello.hello
+seyHello = HelloWorld('World!')
 seyHello.print_hello()
