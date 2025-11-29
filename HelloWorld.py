@@ -1,6 +1,6 @@
 class HelloWorld:
-    def seyHello(self):
-        print('This is my third commit')
+    def seyHello(self, number):
+        print('This is my commit number: ', number)
 
 sey = HelloWorld()
-sey.seyHello()
+sey.seyHello(4)
