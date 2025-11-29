@@ -1,6 +1,10 @@
 class HelloWorld:
-    def seyHello(self, number):
-        print('This is my commit number: ', number)
+    def __init__(self, hello):
+        self.hello = hello
 
-sey = HelloWorld()
-sey.seyHello(4)
+    def print_hello(self):
+        print('heeeeeeeeellooooooo')
+
+seyHello = HelloWorld(1)
+seyHello.hello
+seyHello.print_hello()
