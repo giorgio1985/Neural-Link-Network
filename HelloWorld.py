@@ -1,2 +1,6 @@
-def helloWorld():
- print('first hello World!!!!!')
+class HelloWorld:
+    def seyHello(self):
+        print('This is my third commit')
+
+sey = HelloWorld()
+sey.seyHello()
