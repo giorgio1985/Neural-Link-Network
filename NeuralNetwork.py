@@ -26,3 +26,10 @@ class NeuralNetwork:
   # per convertire A2 in un array 1D
         return A2.ravel()
 
+    def predict(self, X): #Classifico le probabilita maggiore di 50 come positive dalla foward propagation
+        proba = self._forward_propagation(X)
+        y = np.zeros(X.shape[0])
+        y[proba>=0.5]=1
+        y[proba<0.5]=0
+        return y
+
