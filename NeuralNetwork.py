@@ -15,8 +15,14 @@ class NeuralNetwork:
     def _sigmoid(self, Z): #Funzione di attivazione per strati output
        return 1/(1+np.power(np.e,-Z))
 
-
-
-
-
+    def _forward_propagation(self , X):
+        Z1 = np.dot(X,self._W1)+self._b1
+        A1 = self._relu(Z1)
+        Z2 = np.dot(A1,self._W2)+self._b2
+        A2 = self._sigmoid(Z2)
+        self.foward_cache = (Z1, A1, Z2, A2)
+  
+  # usiamo il metodo .ravel()
+  # per convertire A2 in un array 1D
+        return A2.ravel()
 
