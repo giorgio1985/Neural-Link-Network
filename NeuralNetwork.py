@@ -8,6 +8,9 @@ class NeuralNetwork:
 
     def _log_loss(self, y_true, y_proba): #Funzione entropica, piu precisa dell'accuracy. Calcola il prodotto scalare.
         return -np.sum(np.dot(y_true,np.log(y_proba))+np.dot((1-y_true),np.log(1-y_proba)))/len(y_true)
+
+    def _relu(self, Z): #Funzione di attivazione
+       return np.maximum(Z, 0)
     
 
 
