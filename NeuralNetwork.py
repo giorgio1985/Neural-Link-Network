@@ -33,3 +33,6 @@ class NeuralNetwork:
         y[proba<0.5]=0
         return y
 
+    def predict_proba(self, X):         
+       return self._forward_propagation(X)
+
