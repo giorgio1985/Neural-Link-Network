@@ -36,3 +36,12 @@ class NeuralNetwork:
     def predict_proba(self, X):         
        return self._forward_propagation(X)
 
+    def fit(self, X, y, epochs=200, lr=0.01): #Gradient descent
+     for _ in range(epochs):
+      Y = self._forward_propagation(X)
+      dW1, db1, dW2, db2 = self._funzione_magica_che_calcola_le_derivate_parziali(X, y)
+      self._W1-=lr*dW1
+      self._b1-=lr*db1
+      self._W2-=lr*dW2
+      self._b2-=lr*db2
+
