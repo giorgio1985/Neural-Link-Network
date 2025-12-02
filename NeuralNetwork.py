@@ -43,5 +43,26 @@ class NeuralNetwork:
       self._W1-=lr*dW1
       self._b1-=lr*db1
       self._W2-=lr*dW2
-      self._b2-=lr*db2
 
+
+    def _relu_derivative(self, Z):
+
+      dZ = np.zeros(Z.shape)
+      dZ[Z>0] = 1
+      return dZ
+
+
+    def _back_propagation(self, X, y):
+      Z1, A1, Z2, A2 = self._forward_cache
+                   
+      m = A1.shape[1]
+    
+      dZ2 = A2-y.reshape(-1,1) # il reshape ci serve per far combaciare le dimensioni dei due vettori
+      dW2 = np.dot(A1.T, dZ2)/m
+      db2 = np.sum(dZ2, axis=0)/m
+
+      dZ1 = np.dot(dZ2, self._W2.T)*self._relu_derivative(Z1)
+      dW1 = np.dot(X.T, dZ1)/m
+      db1 = np.sum(dZ1, axis=0)/m # eseguiamo la somma lungo le righe
+    
+      return dW1, db1, dW2, db2
