@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class NeuralNetwork:
   
   
@@ -15,7 +16,7 @@ class NeuralNetwork:
 
     
   def _accuracy(self, y, y_pred):      
-    return np.sum(y==y_pred)/len(y)
+     np.sum(y==y_pred)/len(y)
   
   
   def _log_loss(self, y_true, y_proba):
